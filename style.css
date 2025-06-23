@@ -1,0 +1,203 @@
+/* ---- FONTES E CONFIGURAÇÕES GERAIS ---- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Cor de fundo suave */
+}
+
+/* ---- CABEÇALHO (HEADER) ---- */
+.logo {
+    max-height: 45px; /* Ajuste a altura das logos */
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+/* ---- SEÇÃO HERO ---- */
+.hero-section {
+    background-color: #4a4a4a; /* Cor de fundo principal */
+    /* A imagem original tem uma textura. Para simplificar, usamos uma cor sólida.
+       Se quisesse a imagem: background-image: url('caminho/para/sua/imagem-de-fundo.png'); */
+    min-height: 400px;
+    padding: 60px 0;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.btn-sobre-nos {
+    background-color: #A080B4; /* Cor roxa do botão */
+    color: white;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-sobre-nos:hover {
+    background-color: #8e6a9e;
+    color: white;
+}
+
+
+/* ---- SEÇÃO DE NOTÍCIAS ---- */
+.noticias-section h2 {
+    color: #46508C; /* Cor azul do título da seção */
+    font-weight: 700;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-weight: 700;
+    color: #333;
+    min-height: 50px; /* Garante alinhamento dos títulos */
+}
+
+.btn-ler-mais,
+.btn-ver-todos {
+    background-color: #343a40; /* Cor escura dos botões */
+    color: white;
+    font-weight: 500;
+    padding: 8px 25px;
+}
+
+.btn-ler-mais:hover,
+.btn-ver-todos:hover {
+    background-color: #23272b;
+    color: white;
+}
+
+/*
+=================================
+ESTILOS ADICIONAIS - PÁGINA SOBRE
+=================================
+*/
+
+.intro-sobre {
+    background-color: #eaf6f5; /* Tom de verde-água claro do fundo */
+}
+
+.page-title {
+    color: #46508C; /* Azul padrão dos títulos */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    color: #46508C; /* Azul padrão dos títulos */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #46508C; /* Detalhe da barra lateral */
+    padding-left: 1rem;
+}
+
+.conteudo-detalhado ul {
+    list-style-type: '■ '; /* Usa um quadrado como marcador, similar ao da imagem */
+    padding-left: 1.5rem;
+}
+
+.conteudo-detalhado ul li {
+    padding-left: 0.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+}
+
+/*
+===============================
+ESTILOS ADICIONAIS - PÁGINA EQUIPE
+===============================
+*/
+
+.title-decorator {
+    width: 50px;
+    height: 4px;
+    background-color: #46508C; /* Azul padrão */
+    margin-bottom: 0.5rem;
+    border-radius: 2px;
+}
+
+.page-main-title {
+    color: #333;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.team-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    height: 100%;
+}
+
+.card-section-title {
+    color: #46508C;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.team-member-name {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.team-member-details,
+.team-member-details a {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.team-member-details a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+.subsection-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.team-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.team-list li {
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.team-list small {
+    color: #6c757d;
+}
