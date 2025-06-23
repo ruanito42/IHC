@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajuda - CIPEAD UFPR</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+
+  <main class="container py-5">
+    <h1 class="mb-4 text-center" style="color: #002D62; font-weight: 700;">Como usar o site</h1>
+
+    <!-- Vídeo -->
+    <div class="mb-5 text-center">
+      <h2 class="h4 mb-3" style="color: #3E7CB1;">Assista ao vídeo introdutório</h2>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" title="Vídeo institucional" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Manual -->
+    <div>
+      <h2 class="h4 mb-4" style="color: #3E7CB1;">Manual de Navegação</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">🔎 Para visualizar os editais mais recentes, vá até o menu <strong>Editais e Notícias</strong> ou clique no botão "Ver todos" da página inicial.</li>
+        <li class="list-group-item">📚 Para informações sobre cursos EaD, navegue até o menu <strong>Cursos</strong> e explore graduação, especialização ou capacitação.</li>
+        <li class="list-group-item">💼 Em <strong>Institucional</strong>, você encontra detalhes sobre a SEaDIP, histórico da EaD e a equipe atual.</li>
+        <li class="list-group-item">📄 O menu <strong>Documentos</strong> centraliza formulários, guias, templates e termos de uso.</li>
+        <li class="list-group-item">🌐 Precisa acessar o AVA ou abrir uma turma? Utilize o menu <strong>Ambientes Virtuais</strong>.</li>
+        <li class="list-group-item">🧑‍💻 Se você for da equipe de desenvolvimento, acesse a <strong>Área do Desenvolvedor</strong> para materiais técnicos, versões do site e contato com responsáveis.</li>
+        <li class="list-group-item">📩 Para dúvidas, use o formulário de contato no rodapé da página.</li>
+      </ul>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-container").innerHTML = data;
+
+      // Ativa o item de menu conforme a URL
+      const currentPath = window.location.pathname;
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath.split('/').pop()) {
+          link.classList.add('active');
+        }
+      });
+    });
+</script>
+<div id="footer-container"></div>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>

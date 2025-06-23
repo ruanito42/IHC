@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editais e Notícias - CIPEAD UFPR</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .nav-pills .nav-link.active {
+      background-color: #002D62 !important;
+      color: white !important;
+    }
+    .nav-pills .nav-link {
+      color: #002D62;
+    }
+    .page-link{
+      color: #002D62;
+    }
+     .page-link:focus {
+      box-shadow: 0 0 0 0.25rem rgba(0, 45, 98, 0.25);
+    }
+    .page-item.active .page-link {
+        background-color: #002D62;
+        border-color: #002D62;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <main class="container py-5">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Editais e Notícias</li>
+      </ol>
+    </nav>
+    <h1 class="mb-4" style="font-family: 'Roboto', sans-serif; color: #002D62;">Editais e Notícias</h1>
+
+    <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-filter="todos">Todos</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-filter="edital">Editais</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-filter="noticia">Notícias</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-filter="chamada">Chamadas</button>
+      </li>
+    </ul>
+
+    <div class="list-group" id="lista-publicacoes">
+      </div>
+
+    <div class="d-flex justify-content-between align-items-center mt-5">
+      <div id="resultados-info" class="text-muted"></div>
+      
+      <nav aria-label="Navegação de página">
+        <ul class="pagination mb-0" id="paginacao-container">
+          </ul>
+      </nav>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Injeta a Navbar
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+        const current = window.location.pathname.split("/").pop();
+        const links = document.querySelectorAll(".nav-link");
+        links.forEach(link => {
+          if (link.getAttribute("href") === current) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      function generateFakeData(count) {
+        const data = [];
+        const categories = ['edital', 'noticia', 'chamada'];
+        const titles = { edital: "Edital nº XX/2025 - ", noticia: "Notícia: ", chamada: "Chamada Pública - " };
+        const contents = {
+            edital: ["Seleção de Tutores EaD", "Inscrições para Bolsistas de Apoio", "Processo Seletivo para Coordenador de Curso", "Homologação de Resultado Final", "Abertura de Vagas para Alunos Especiais"],
+            noticia: ["Plataforma EaD atualizada com novos recursos", "Prazo de inscrição para cursos EaD é prorrogado", "UFPR e CIPEAD firmam nova parceria", "Novo Guia do Estudante EaD disponível", "Live sobre Inovações Pedagógicas bate recorde de audiência"],
+            chamada: ["Consulta Pública sobre novo regulamento de Polos", "Convocação para Reunião de Coordenadores", "Chamada para Submissão de Artigos", "Credenciamento de Docentes Voluntários", "Convocação de Aprovados em Processo Seletivo"]
+        };
+        for (let i = 0; i < count; i++) {
+          const category = categories[Math.floor(Math.random() * categories.length)];
+          const month = Math.floor(Math.random() * 12);
+          const day = Math.floor(Math.random() * 28) + 1;
+          const date = new Date(2025, month, day);
+          const titleText = contents[category][Math.floor(Math.random() * contents[category].length)];
+          const fullTitle = titles[category].replace('XX', (count - i).toString().padStart(2, '0')) + titleText;
+          data.push({ id: i + 1, title: fullTitle, description: `Detalhes sobre ${titleText.toLowerCase()} no sistema UAB/UFPR. Acesse para mais informações e documentos.`, date: date, category: category });
+        }
+        return data;
+      }
+
+      const allPublications = generateFakeData(50).sort((a, b) => b.date - a.date);
+      let filteredPublications = [...allPublications];
+      let currentPage = 1;
+      const itemsPerPage = 10;
+
+      const listContainer = document.getElementById('lista-publicacoes');
+      const paginationContainer = document.getElementById('paginacao-container');
+      const filterButtons = document.querySelectorAll('#pills-tab .nav-link');
+      const resultsInfoContainer = document.getElementById('resultados-info');
+
+      function renderList(items) {
+        listContainer.innerHTML = '';
+        if (items.length === 0) {
+            listContainer.innerHTML = '<p class="text-center text-muted py-5">Nenhuma publicação encontrada.</p>';
+            return;
+        }
+        const listFragment = document.createDocumentFragment();
+        items.forEach(item => {
+          const itemEl = document.createElement('a');
+          itemEl.href = "#";
+          itemEl.className = "list-group-item list-group-item-action";
+          itemEl.innerHTML = `
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1 text-primary">${item.title}</h5>
+              <small>${item.date.toLocaleDateString('pt-BR')}</small>
+            </div>
+            <p class="mb-1 text-secondary">${item.description}</p>
+            <small class="badge bg-secondary">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</small>
+          `;
+          listFragment.appendChild(itemEl);
+        });
+        listContainer.appendChild(listFragment);
+      }
+      
+      function renderPagination() {
+        paginationContainer.innerHTML = '';
+        const totalPages = Math.ceil(filteredPublications.length / itemsPerPage);
+        if (totalPages <= 1) return;
+        const paginationFragment = document.createDocumentFragment();
+        for (let i = 1; i <= totalPages; i++) {
+          const pageItem = document.createElement('li');
+          pageItem.className = 'page-item';
+          if (i === currentPage) pageItem.classList.add('active');
+          pageItem.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
+          paginationFragment.appendChild(pageItem);
+        }
+        paginationContainer.appendChild(paginationFragment);
+      }
+
+      function displayPage(page) {
+        currentPage = page;
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const pageItems = filteredPublications.slice(startIndex, endIndex);
+
+        const totalItems = filteredPublications.length;
+        const startItem = totalItems > 0 ? startIndex + 1 : 0;
+        const endItem = Math.min(endIndex, totalItems);
+
+        if (totalItems === 0) {
+          resultsInfoContainer.innerHTML = '';
+        } else if (totalItems === 1) {
+            resultsInfoContainer.innerHTML = 'Exibindo <strong>1</strong> resultado';
+        } else {
+          resultsInfoContainer.innerHTML = `Exibindo <strong>${startItem}–${endItem}</strong> de <strong>${totalItems}</strong> resultados`;
+        }
+        
+        renderList(pageItems);
+        renderPagination();
+      }
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          const filter = button.getAttribute('data-filter');
+          filteredPublications = (filter === 'todos') ? [...allPublications] : allPublications.filter(p => p.category === filter);
+          displayPage(1);
+        });
+      });
+      
+      paginationContainer.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          e.preventDefault();
+          const page = parseInt(e.target.getAttribute('data-page'));
+          if (page !== currentPage) displayPage(page);
+        }
+      });
+      
+      displayPage(1);
+    });
+  </script>
+  <div id="footer-container"></div>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+</body>
+</html>
