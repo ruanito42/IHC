@@ -429,7 +429,7 @@ ESTILOS ADICIONAIS - FORMULÁRIO D1
  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
-.breadcrumb {
+/* .breadcrumb {
  background-color: #e9ecef;
  padding: 0.5rem 1rem;
  border-radius: 4px;
@@ -447,7 +447,7 @@ ESTILOS ADICIONAIS - FORMULÁRIO D1
 
 .breadcrumb-item.active {
  color: #6c757d;
-}
+} */
 
 /* Estilizando o "Outro" do Cargo */
 #outroCargoRadio:checked + #outroCargoTexto {
