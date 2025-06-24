@@ -353,3 +353,76 @@ ESTILOS ADICIONAIS - PÁGINA EQUIPE
   position: relative; 
   z-index: 2; 
 }
+
+
+
+/* ============================ */
+/* ESTILOS PARA PÁGINA DE AJUDA */
+/* ============================ */
+
+.page-ajuda h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #002D62;
+  margin-bottom: 2rem;
+}
+
+.page-ajuda h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #3E7CB1;
+}
+
+.video-ajuda iframe {
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.btn-padrao {
+  background-color: #002D62;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-padrao:hover {
+  background-color: #3E7CB1; /* azul médio no hover */
+  color: #ffffff;
+}
+
+.accordion-button {
+  font-weight: 600;
+  color: #002D62;
+  background-color: #f1f4fb;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #BBC1E3;
+  color: #002D62;
+}
+
+.accordion-body {
+  background-color: #ffffff;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.video-wrapper {
+  max-width: 480px;
+  height: 270px;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
