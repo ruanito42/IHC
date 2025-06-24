@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário D3 - Briefing de Projeto Gráfico - CIPEAD UFPR</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+
+  <main class="container py-5">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+        <li class="breadcrumb-item"><a href="formulario.html">Formulários</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Formulário D3</li>
+      </ol>
+    </nav>
+    <h1>Formulário D3 - Briefing para Criação de Projetos Gráficos</h1>
+    <p class="lead text-muted">Parte a ser respondida pelo proponente da ação para solicitar a criação de um projeto gráfico.</p>
+    <hr class="my-4">
+
+    <form id="formD3">
+      <h5 class="form-section-title">IDENTIFICAÇÃO</h5>
+      <div class="row g-3">
+        <div class="col-md-8">
+          <label for="d3-nome-projeto" class="form-label">Nome do projeto</label>
+          <input type="text" class="form-control" id="d3-nome-projeto">
+        </div>
+        <div class="col-md-4">
+          <label for="d3-veiculacao" class="form-label">Onde vai ser veiculado?</label>
+          <input type="text" class="form-control" id="d3-veiculacao" placeholder="Ex: Web, impresso, UFPR Virtual...">
+        </div>
+      </div>
+
+      <h5 class="form-section-title">PÚBLICO-ALVO</h5>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label for="d3-faixa-etaria" class="form-label">Qual a faixa etária?</label>
+          <input type="text" class="form-control" id="d3-faixa-etaria">
+        </div>
+        <div class="col-md-4">
+            <label for="d3-comunidade" class="form-label">Público da UFPR ou Comunidade externa?</label>
+            <input type="text" class="form-control" id="d3-comunidade">
+        </div>
+        <div class="col-md-4">
+            <label for="d3-escolaridade" class="form-label">Que escolaridade têm?</label>
+            <input type="text" class="form-control" id="d3-escolaridade">
+        </div>
+        <div class="col-12">
+            <label for="d3-acessibilidade" class="form-label">Poderá ter alguém que necessite de recursos de acessibilidade?</label>
+            <input type="text" class="form-control" id="d3-acessibilidade" placeholder="Ex: Cores para daltônicos, fontes maiores...">
+        </div>
+      </div>
+
+      <h5 class="form-section-title">IDENTIDADE VISUAL</h5>
+      <div class="row g-3">
+          <div class="col-12">
+              <label for="d3-manual-marca" class="form-label">Há uma Manual da Marca a ser seguido?</label>
+              <input type="text" class="form-control" id="d3-manual-marca">
+          </div>
+          <div class="col-12">
+            <label for="d3-referencias" class="form-label">Há alguma referência visual? (Pode colar links)</label>
+            <textarea class="form-control" id="d3-referencias" rows="3"></textarea>
+          </div>
+          <div class="col-12">
+            <label for="d3-aplicacoes" class="form-label">Quais são as aplicações?</label>
+            <input type="text" class="form-control" id="d3-aplicacoes" placeholder="Ex: banners, ebooks, slides, rede social, vídeo">
+          </div>
+      </div>
+
+      <h5 class="form-section-title">OBJETIVOS</h5>
+       <div class="row g-3">
+          <div class="col-12">
+              <label for="d3-objetivo-curso" class="form-label">Qual objetivo geral do curso?</label>
+              <textarea class="form-control" id="d3-objetivo-curso" rows="3"></textarea>
+          </div>
+          <div class="col-12">
+            <label for="d3-objetivo-idv" class="form-label">Qual o objetivo da identidade visual?</label>
+            <input type="text" class="form-control" id="d3-objetivo-idv" placeholder="Ex: atrair o público jovem, passar seriedade">
+          </div>
+      </div>
+
+      <h5 class="form-section-title">PROCESSO DE TRABALHO</h5>
+      <div class="row g-3">
+        <div class="col-md-6">
+            <label for="d3-cronograma" class="form-label">Qual é o cronograma? (link)</label>
+            <input type="url" class="form-control" id="d3-cronograma" placeholder="https://">
+        </div>
+        <div class="col-md-6">
+            <label for="d3-responsavel" class="form-label">Quem é o responsável por validação e dúvidas?</label>
+            <input type="text" class="form-control" id="d3-responsavel">
+        </div>
+        <div class="col-md-6">
+            <label for="d3-prazo-grafico" class="form-label">Qual é o prazo de entrega do projeto gráfico?</label>
+            <input type="date" class="form-control" id="d3-prazo-grafico">
+        </div>
+        <div class="col-md-6">
+            <label for="d3-prazo-final" class="form-label">Qual é o prazo de entrega do projeto final?</label>
+            <input type="date" class="form-control" id="d3-prazo-final">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg mt-4">Enviar Briefing D3</button>
+    </form>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Carrega navbar e footer
+    fetch("navbar.html").then(res=>res.text()).then(data=>document.getElementById("navbar-container").innerHTML=data);
+    fetch("footer.html").then(res=>res.text()).then(data=>document.getElementById("footer-container").innerHTML=data);
+
+    // Lida com o envio do formulário
+    document.getElementById("formD3").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Briefing D3 enviado com sucesso! (Isso é uma demonstração)");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
