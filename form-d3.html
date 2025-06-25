@@ -19,137 +19,89 @@
         <li class="breadcrumb-item active" aria-current="page">Formulário D3</li>
       </ol>
     </nav>
-    <h1>Formulário D3 - Briefing para Criação de Projetos Gráficos</h1>
-    <p class="lead text-muted">Parte a ser respondida pelo proponente da ação para solicitar a criação de um projeto gráfico.</p>
+
+    <div class="text-center">
+        <h1>Formulário D3 - Briefing para Projeto Gráfico</h1>
+        <p class="lead text-muted">Solicitação de criação de identidade visual para materiais educacionais.</p>
+    </div>
     <hr class="my-4">
 
-    <form id="formD3">
-      <h5 class="form-section-title">IDENTIFICAÇÃO</h5>
-      <div class="row g-3">
-        <div class="col-md-8">
-          <label for="d3-nome-projeto" class="form-label">Nome do projeto</label>
-          <input type="text" class="form-control" id="d3-nome-projeto">
-        </div>
-        <div class="col-md-4">
-          <label for="d3-veiculacao" class="form-label">Onde vai ser veiculado?</label>
-          <input type="text" class="form-control" id="d3-veiculacao" placeholder="Ex: Web, impresso, UFPR Virtual...">
-        </div>
-      </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        
+        <form id="formD3" class="form-wrapper">
+          <h5 class="form-section-title">IDENTIFICAÇÃO DO PROJETO</h5>
+          <div class="row g-3">
+            <div class="col-md-8">
+              <label for="d3-nome-projeto" class="form-label">Nome do curso/projeto *</label>
+              <input type="text" class="form-control" id="d3-nome-projeto" required>
+            </div>
+            <div class="col-md-4">
+              <label for="d3-veiculacao" class="form-label">Principal meio de veiculação *</label>
+              <input type="text" class="form-control" id="d3-veiculacao" placeholder="Ex: UFPR Virtual, Impresso, etc." required>
+            </div>
+          </div>
 
-      <h5 class="form-section-title">PÚBLICO-ALVO</h5>
-      <div class="row g-3">
-        <div class="col-md-4">
-            <label for="d3-faixa-etaria" class="form-label">Qual a faixa etária?</label>
-            <input type="text" class="form-control" id="d3-faixa-etaria">
-        </div>
-        <div class="col-md-4">
-            <label for="d3-comunidade" class="form-label">Público (UFPR ou Comunidade externa)</label>
-            <input type="text" class="form-control" id="d3-comunidade">
-        </div>
-        <div class="col-md-4">
-            <label for="d3-escolaridade" class="form-label">Que escolaridade têm?</label>
-            <input type="text" class="form-control" id="d3-escolaridade">
-        </div>
-        <div class="col-md-6">
-            <label for="d3-localizacao-publico" class="form-label">Onde estão?</label>
-            <input type="text" class="form-control" id="d3-localizacao-publico">
-        </div>
-        <div class="col-md-6">
-            <label for="d3-ocupacao-publico" class="form-label">O que fazem?</label>
-            <input type="text" class="form-control" id="d3-ocupacao-publico">
-        </div>
-        <div class="col-12">
-            <label for="d3-objetivo-publico" class="form-label">O que querem aprender?</label>
-            <textarea class="form-control" id="d3-objetivo-publico" rows="2"></textarea>
-        </div>
-        <div class="col-12">
-            <label for="d3-acessibilidade" class="form-label">Necessita de recursos de acessibilidade?</label>
-            <input type="text" class="form-control" id="d3-acessibilidade" placeholder="Ex: Cores para daltônicos, fontes maiores...">
-        </div>
-      </div>
+          <h5 class="form-section-title">PÚBLICO-ALVO</h5>
+          <div class="row g-3">
+            <div class="col-12">
+                <label for="d3-publico-descricao" class="form-label">Descreva o público principal (faixa etária, escolaridade, relação com a UFPR)</label>
+                <textarea class="form-control" id="d3-publico-descricao" rows="3"></textarea>
+            </div>
+             <div class="col-12">
+                <label for="d3-acessibilidade" class="form-label">Há necessidade de recursos de acessibilidade específicos?</label>
+                <input type="text" class="form-control" id="d3-acessibilidade" placeholder="Ex: Cores para daltônicos, fontes ampliadas, etc.">
+            </div>
+          </div>
 
-      <h5 class="form-section-title">IDENTIDADE VISUAL</h5>
-      <div class="row g-3">
-          <div class="col-12">
-              <label for="d3-manual-marca" class="form-label">Há um Manual da Marca a ser seguido?</label>
-              <input type="text" class="form-control" id="d3-manual-marca">
+          <h5 class="form-section-title">IDENTIDADE VISUAL E REFERÊNCIAS</h5>
+          <div class="row g-3">
+              <div class="col-12">
+                <label for="d3-objetivo-idv" class="form-label">Qual mensagem ou sensação a identidade visual deve transmitir?</label>
+                <input type="text" class="form-control" id="d3-objetivo-idv" placeholder="Ex: Seriedade e tradição, inovação e tecnologia, etc.">
+              </div>
+              <div class="col-12">
+                <label for="d3-referencias" class="form-label">Existem referências visuais que você gosta? (Pode colar links de outros sites, imagens, etc.)</label>
+                <textarea class="form-control" id="d3-referencias" rows="3"></textarea>
+              </div>
+              <div class="col-12">
+                <label for="d3-aplicacoes" class="form-label">Onde esta identidade visual será aplicada?</label>
+                <input type="text" class="form-control" id="d3-aplicacoes" placeholder="Ex: E-books, slides, vídeos, banners, redes sociais...">
+              </div>
           </div>
-          <div class="col-12">
-              <label for="d3-mudanca-manual" class="form-label">Caso não queira seguir algo do manual, qual será a mudança?</label>
-              <input type="text" class="form-control" id="d3-mudanca-manual" placeholder="Ex: fonte diferente, paleta de cores secundária...">
-          </div>
-          <div class="col-12">
-            <label for="d3-ilustracoes" class="form-label">Utilização de ilustrações, ícones ou imagens?</label>
-            <input type="text" class="form-control" id="d3-ilustracoes">
-          </div>
-          <div class="col-12">
-            <label for="d3-referencias" class="form-label">Há alguma referência visual? (Pode colar links)</label>
-            <textarea class="form-control" id="d3-referencias" rows="3"></textarea>
-          </div>
-          <div class="col-12">
-            <label for="d3-aplicacoes" class="form-label">Quais são as aplicações?</label>
-            <input type="text" class="form-control" id="d3-aplicacoes" placeholder="Ex: banners, ebooks, slides, rede social, vídeo">
-          </div>
-          <div class="col-md-6">
-            <label for="d3-resolucao" class="form-label">Qual a resolução mínima?</label>
-            <input type="text" class="form-control" id="d3-resolucao" placeholder="Ex: 150dpi">
-          </div>
-          <div class="col-md-6">
-            <label for="d3-tamanho-tela" class="form-label">Tamanho da tela (se aplicável)</label>
-            <input type="text" class="form-control" id="d3-tamanho-tela" placeholder="Ex: 1920x1080 (16:9)">
-          </div>
-      </div>
 
-      <h5 class="form-section-title">OBJETIVOS</h5>
-       <div class="row g-3">
-          <div class="col-12">
-              <label for="d3-objetivo-curso" class="form-label">Qual objetivo geral do curso/material?</label>
-              <textarea class="form-control" id="d3-objetivo-curso" rows="3"></textarea>
+          <h5 class="form-section-title">PRAZOS E RESPONSÁVEIS</h5>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="d3-responsavel" class="form-label">Responsável pela aprovação do material *</label>
+              <input type="text" class="form-control" id="d3-responsavel" required>
+            </div>
+            <div class="col-md-6">
+              <label for="d3-prazo-final" class="form-label">Prazo final desejado para a entrega</label>
+              <input type="date" class="form-control" id="d3-prazo-final">
+            </div>
           </div>
-          <div class="col-12">
-            <label for="d3-objetivo-idv" class="form-label">Qual o objetivo da identidade visual?</label>
-            <input type="text" class="form-control" id="d3-objetivo-idv" placeholder="Ex: atrair o público jovem, passar seriedade">
+
+          <div class="alert alert-secondary mt-5" role="alert">
+            <h6 class="alert-heading">Informações Importantes</h6>
+            <p class="mb-0 small">Lembre-se: O material deve ser enviado via Google Drive, com arquivos abertos (editáveis) e fechados (visualização). A produção deve ser feita em programas da Adobe ou que exportem arquivos compatíveis.</p>
           </div>
-      </div>
 
-      <h5 class="form-section-title">PROCESSO DE TRABALHO</h5>
-      <div class="row g-3">
-        <div class="col-md-6">
-            <label for="d3-cronograma" class="form-label">Qual é o cronograma? (link)</label>
-            <input type="url" class="form-control" id="d3-cronograma" placeholder="https://">
-        </div>
-        <div class="col-md-6">
-            <label for="d3-responsavel" class="form-label">Quem é o responsável por validação e dúvidas?</label>
-            <input type="text" class="form-control" id="d3-responsavel">
-        </div>
-         <div class="col-md-6">
-            <label for="d3-banco-imagens" class="form-label">Há um banco de imagens e ilustrações?</label>
-            <input type="text" class="form-control" id="d3-banco-imagens">
-        </div>
-        <div class="col-md-6">
-            <label for="d3-prazo-grafico" class="form-label">Qual é o prazo de entrega do projeto gráfico?</label>
-            <input type="date" class="form-control" id="d3-prazo-grafico">
-        </div>
-      </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-submit-form btn-lg mt-4">Enviar Briefing</button>
+          </div>
+        </form>
 
-      <div class="alert alert-secondary mt-4" role="alert">
-        <h6 class="alert-heading">Informações de Entrega</h6>
-        <p class="mb-0 small">Lembre-se: O material deve ser enviado via Google Drive, com arquivos abertos (editáveis) e fechados (visualização). A produção deve ser feita em programas da Adobe ou que exportem arquivos compatíveis.</p>
       </div>
-
-      <button type="submit" class="btn btn-primary btn-lg mt-4">Enviar Briefing D3</button>
-    </form>
+    </div>
   </main>
 
   <div id="footer-container"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Carrega navbar e footer
     fetch("navbar.html").then(res=>res.text()).then(data=>document.getElementById("navbar-container").innerHTML=data);
     fetch("footer.html").then(res=>res.text()).then(data=>document.getElementById("footer-container").innerHTML=data);
-
-    // Lida com o envio do formulário
     document.getElementById("formD3").addEventListener("submit", function (e) {
       e.preventDefault();
       alert("Briefing D3 enviado com sucesso! (Isso é uma demonstração)");

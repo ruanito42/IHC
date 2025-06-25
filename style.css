@@ -18,6 +18,9 @@ body {
 .nav-link:hover {
     color: #000;
 }
+.navbar-nav {
+  gap: 1rem; /* Ajuste o valor conforme sua preferência (ex: 1rem, 15px) */
+}
 
 /* ---- SEÇÃO HERO ---- */
 .hero-section {
@@ -540,4 +543,96 @@ ESTILOS ADICIONAIS - FORMULÁRIO D1
   height: 100%;
   border: 0;
   display: block;
+}
+ /* ======================================= */
+/* ESTILOS APRIMORADOS PARA FORMULÁRIOS    */
+/* ======================================= */
+
+/* Contêiner principal do formulário */
+.form-wrapper {
+  background-color: #ffffff; /* Fundo branco para máximo contraste */
+  padding: 2rem 2.5rem;      /* Mais espaçamento interno */
+  border-radius: 8px;
+  border: 1px solid #dee2e6; /* Borda sutil para definir a área */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Títulos das seções (ex: "DO DEMANDANTE") */
+.form-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #002D62; /* Azul escuro principal */
+  border-left: 4px solid #002D62; /* Borda com cor de alto contraste */
+  padding-left: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Rótulos dos campos (Labels) */
+.form-label {
+  font-weight: 600; /* Mais peso para fácil leitura */
+  color: #212529;   /* Preto quase puro para alto contraste */
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Campos de entrada (Inputs) */
+.form-control {
+  border-color: #adb5bd; /* Borda mais escura que o padrão */
+  font-size: 1rem;
+  padding: 0.75rem;
+}
+
+.form-control:focus {
+  border-color: #002D62; /* Usa a cor primária no foco */
+  box-shadow: 0 0 0 0.25rem rgba(0, 45, 98, 0.25); /* Sombra de foco na cor primária */
+}
+
+/* Botão de envio principal */
+.btn-submit-form {
+  background-color: #002D62;
+  border-color: #002D62;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-submit-form:hover {
+  background-color: #004394; /* Um tom um pouco mais claro de azul no hover */
+  border-color: #004394;
+}
+
+/* Estilos para legendas de grupos de campos (melhora a acessibilidade) */
+.form-legend {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.75rem;
+}
+
+/* ====================================================== */
+/* MELHORIAS DE CONTRASTE PARA CHECKBOX E RADIO BUTTONS   */
+/* ====================================================== */
+
+/* Estilo para a "bolinha" quando NÃO está marcada */
+.form-check-input {
+  background-color: #fff; /* Fundo branco para não competir com a borda */
+  border: 2px solid #54595E; /* Borda mais escura e grossa para alta visibilidade */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilo para a "bolinha" quando ESTÁ MARCADA */
+.form-check-input:checked {
+  background-color: #002D62; /* Cor primária do tema */
+  border-color: #002D62;     /* Borda na mesma cor */
+}
+
+/* Estilo para o anel de FOCO (acessibilidade via teclado) */
+.form-check-input:focus {
+  border-color: #002D62;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(0, 45, 98, 0.25); /* Anel de foco na cor do tema */
 }

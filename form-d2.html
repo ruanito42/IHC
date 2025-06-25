@@ -19,149 +19,98 @@
         <li class="breadcrumb-item active" aria-current="page">Formulário D2</li>
       </ol>
     </nav>
-    <h1>Formulário D2 - Briefing para Design Educacional</h1>
-    <p class="lead text-muted">Este formulário detalha as necessidades para a criação de propostas de Design Educacional para cursos EaD.</p>
+    
+    <div class="text-center">
+        <h1>Formulário D2 - Briefing para Design Educacional</h1>
+        <p class="lead text-muted">Este formulário detalha as necessidades para a criação de propostas de Design Educacional.</p>
+    </div>
     <hr class="my-4">
 
-    <form id="formD2">
-      <h5 class="form-section-title">IDENTIFICAÇÃO</h5>
-      <div class="row g-3">
-        <div class="col-md-8">
-          <label for="d2-nome-projeto" class="form-label">Nome do projeto</label>
-          <input type="text" class="form-control" id="d2-nome-projeto">
-        </div>
-        <div class="col-md-4">
-          <label for="d2-carga-horaria" class="form-label">Carga horária</label>
-          <input type="text" class="form-control" id="d2-carga-horaria">
-        </div>
-      </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
 
-      <h5 class="form-section-title">PÚBLICO-ALVO</h5>
-      <div class="row g-3">
-        <div class="col-md-6">
-          <label for="d2-faixa-etaria" class="form-label">Qual é a faixa etária dos alunos/participantes?</label>
-          <input type="text" class="form-control" id="d2-faixa-etaria">
-        </div>
-        <div class="col-md-6">
-            <label for="d2-escolaridade" class="form-label">Que escolaridade têm?</label>
-            <input type="text" class="form-control" id="d2-escolaridade">
-        </div>
-        <div class="col-12">
-            <label for="d2-publico-descricao" class="form-label">O que fazem? Onde estão? Já se conhecem?</label>
-            <textarea class="form-control" id="d2-publico-descricao" rows="2"></textarea>
-        </div>
-        <div class="col-12">
-            <label for="d2-gap-conhecimento" class="form-label">Qual o gap de conhecimento? (O que precisam saber que ainda não sabem?)</label>
-            <textarea class="form-control" id="d2-gap-conhecimento" rows="3"></textarea>
-        </div>
-      </div>
+        <form id="formD2" class="form-wrapper">
+            <h5 class="form-section-title">IDENTIFICAÇÃO DO PROJETO</h5>
+            <div class="row g-3">
+              <div class="col-md-8">
+                <label for="d2-nome-projeto" class="form-label">Nome do curso/projeto *</label>
+                <input type="text" class="form-control" id="d2-nome-projeto" required>
+              </div>
+              <div class="col-md-4">
+                <label for="d2-carga-horaria" class="form-label">Carga horária total *</label>
+                <input type="number" class="form-control" id="d2-carga-horaria" placeholder="Ex: 60" required>
+              </div>
+            </div>
 
-      <h5 class="form-section-title">CONTEÚDO</h5>
-      <div class="row g-3">
-          <div class="col-md-6">
-              <label for="d2-assunto" class="form-label">Qual é o assunto e qual a profundidade?</label>
-              <input type="text" class="form-control" id="d2-assunto">
-          </div>
-          <div class="col-md-6">
-            <label for="d2-material-disponivel" class="form-label">Há material disponível/pronto?</label>
-            <input type="text" class="form-control" id="d2-material-disponivel" placeholder="Sim, Não, Parcialmente...">
-          </div>
-           <div class="col-md-6">
-            <label for="d2-acesso-professor" class="form-label">Temos acesso ao professor/autor?</label>
-            <input type="text" class="form-control" id="d2-acesso-professor">
-          </div>
-           <div class="col-md-6">
-            <label for="d2-cursos-similares" class="form-label">Há cursos similares? Qual é o assunto?</label>
-            <input type="text" class="form-control" id="d2-cursos-similares">
-          </div>
-      </div>
-      
-      <h5 class="form-section-title">OBJETIVOS</h5>
-      <div class="row g-3">
-        <div class="col-12">
-            <label for="d2-objetivo-geral" class="form-label">Qual objetivo geral do curso? Que competências o aluno deve ter ao concluir?</label>
-            <textarea class="form-control" id="d2-objetivo-geral" rows="3"></textarea>
-        </div>
-        <div class="col-12">
-             <label class="form-label d-block">Todos os alunos precisam atingir as mesmas metas?</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="metas" id="metas-sim" value="Sim">
-                <label class="form-check-label" for="metas-sim">Sim</label>
+            <h5 class="form-section-title">PÚBLICO-ALVO</h5>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="d2-faixa-etaria" class="form-label">Qual é a faixa etária dos participantes?</label>
+                <input type="text" class="form-control" id="d2-faixa-etaria">
+              </div>
+              <div class="col-md-6">
+                  <label for="d2-escolaridade" class="form-label">Qual o nível de escolaridade?</label>
+                  <input type="text" class="form-control" id="d2-escolaridade">
+              </div>
+              <div class="col-12">
+                  <label for="d2-gap-conhecimento" class="form-label">O que eles precisam aprender que ainda não sabem? (Gap de conhecimento)</label>
+                  <textarea class="form-control" id="d2-gap-conhecimento" rows="3"></textarea>
+              </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="metas" id="metas-nao" value="Não">
-                <label class="form-check-label" for="metas-nao">Não</label>
-            </div>
-        </div>
-      </div>
 
-      <h5 class="form-section-title">MÍDIAS</h5>
-        <div class="row g-3">
-          <div class="col-12">
-              <label for="d2-midias" class="form-label">Quais mídias podem ser utilizadas?</label>
-              <input type="text" class="form-control" id="d2-midias" placeholder="Ex: Vídeos, textos, podcasts, infográficos...">
-          </div>
-          <div class="col-md-6">
-            <label for="d2-sga" class="form-label">Qual é o sistema de gerenciamento da aprendizagem?</label>
-            <input type="text" class="form-control" id="d2-sga" placeholder="Ex: Moodle, UFPR Virtual...">
-          </div>
-           <div class="col-md-6">
-            <label for="d2-imagens" class="form-label">Tipo de imagens desejadas</label>
-            <input type="text" class="form-control" id="d2-imagens" placeholder="Ex: Fotos, Iconografia, Cartuns...">
-          </div>
-      </div>
-      
-      <h5 class="form-section-title">PROPOSTA PEDAGÓGICA</h5>
-      <div class="row g-3">
-        <div class="col-md-6">
-            <label class="form-label d-block">Aprendizagem a distância ou híbrida?</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="aprendizagem" id="distancia" value="A distância">
-                <label class="form-check-label" for="distancia">A distância</label>
+            <h5 class="form-section-title">CONTEÚDO E OBJETIVOS</h5>
+            <div class="row g-3">
+                <div class="col-12">
+                  <label for="d2-objetivo-geral" class="form-label">Qual é o objetivo geral do curso? Que competências o aluno deve ter ao concluir?</label>
+                  <textarea class="form-control" id="d2-objetivo-geral" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="d2-material-disponivel" class="form-label">O conteúdo programático ou material base já está disponível?</label>
+                    <input type="text" class="form-control" id="d2-material-disponivel" placeholder="Sim, Não, Parcialmente...">
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="aprendizagem" id="hibrida" value="Híbrida">
-                <label class="form-check-label" for="hibrida">Híbrida</label>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <label class="form-label d-block">Autoinstrucional ou com mediação (tutoria)?</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="mediacao" id="autoinstrucional" value="Autoinstrucional">
-                <label class="form-check-label" for="autoinstrucional">Autoinstrucional</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="mediacao" id="tutoria" value="Com mediação">
-                <label class="form-check-label" for="tutoria">Com mediação (tutoria)</label>
-            </div>
-        </div>
-      </div>
 
-      <h5 class="form-section-title">AVALIAÇÃO DA APRENDIZAGEM</h5>
-       <div class="row g-3">
-          <div class="col-md-6">
-              <label for="d2-avaliacao" class="form-label">Haverá avaliação? Em que momento e de que formas?</label>
-              <input type="text" class="form-control" id="d2-avaliacao" placeholder="Ex: jogos, seminários, projetos...">
-          </div>
-          <div class="col-md-6">
-              <label for="d2-retorno" class="form-label">Que retorno o aluno vai receber?</label>
-              <input type="text" class="form-control" id="d2-retorno">
-          </div>
-      </div>
+            <h5 class="form-section-title">PROPOSTA PEDAGÓGICA</h5>
+            <div class="row g-3">
+                <fieldset class="col-md-6">
+                    <legend class="form-legend fs-6">Modalidade de aprendizagem:</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="aprendizagem" id="distancia" value="A distância">
+                        <label class="form-check-label" for="distancia">Totalmente a distância</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="aprendizagem" id="hibrida" value="Híbrida">
+                        <label class="form-check-label" for="hibrida">Híbrida</label>
+                    </div>
+                </fieldset>
+                <fieldset class="col-md-6">
+                    <legend class="form-legend fs-6">Tipo de mediação:</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="mediacao" id="autoinstrucional" value="Autoinstrucional">
+                        <label class="form-check-label" for="autoinstrucional">Autoinstrucional</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="mediacao" id="tutoria" value="Com mediação (tutoria)">
+                        <label class="form-check-label" for="tutoria">Com mediação (tutoria)</label>
+                    </div>
+                </fieldset>
+            </div>
 
-      <button type="submit" class="btn btn-primary btn-lg mt-4">Enviar Briefing D2</button>
-    </form>
+            <div class="text-center">
+                <button type="submit" class="btn btn-submit-form btn-lg mt-4">Enviar Briefing</button>
+            </div>
+        </form>
+
+      </div>
+    </div>
   </main>
 
   <div id="footer-container"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Carrega navbar e footer
     fetch("navbar.html").then(res=>res.text()).then(data=>document.getElementById("navbar-container").innerHTML=data);
     fetch("footer.html").then(res=>res.text()).then(data=>document.getElementById("footer-container").innerHTML=data);
-
-    // Lida com o envio do formulário
     document.getElementById("formD2").addEventListener("submit", function (e) {
       e.preventDefault();
       alert("Briefing D2 enviado com sucesso! (Isso é uma demonstração)");
